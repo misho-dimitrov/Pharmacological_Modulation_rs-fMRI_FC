@@ -5,6 +5,18 @@ from to_graph_tool import to_graph_tool
 
 # Get n of degrees for each voxel
 def calc_dc(adjacency_matrix):
+    """Get n of degrees for each voxel (first option) or get the weighted sum for each voxel (second option).
+    
+    The function returns a degree centrality array derived from the graph.
+    
+    Args:
+        adjacency_matrix (ndarray): An adjacency matrix in the format [n_voxels, n_voxels].
+        
+    Returns:
+        dc (ndarray): A 1D voxel-wise degree centrality array.
+        
+    """
+    
     g = to_graph_tool(adjacency_matrix)
     
     #Un-weighted

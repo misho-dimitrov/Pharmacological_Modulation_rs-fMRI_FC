@@ -14,6 +14,15 @@ import pickle
 
 # To calculate functional connectivity and degree centrality from an adjacency matrix
 def calc_dc_auto(fMRIroot, fMRI_txt, MASKroot, GM_mask):
+    """ Calculate functional connectivity and degree centrality from an adjacency matrix and save the DC images to disk.
+    
+    Args:
+        fMRIroot (string): fMRI image directory.
+        fMRI_txt (string): A txt file containing the fMRI image filenames.
+        MASKroot (string): Mask image directory.
+        GM_mask (string): Mask image filename.
+        
+    """
     
     # transform the txt file into a Python list... of lists!
     fmri_list = []
