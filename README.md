@@ -4,7 +4,7 @@
 
 ### Main Scripts and Commands: 
 
-<u>Pre-processing:</u> <br />
+<ins>Pre-processing:</ins> <br />
 A) Extract the DICOM images from the TAR archive and convert them to NIfTI (using SGE) - *untar_dcm2nii_final.csh* <br />
 B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_single-echo.rtf* OR *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
 _Functional_Connectivity_Estimation:_ <br />
