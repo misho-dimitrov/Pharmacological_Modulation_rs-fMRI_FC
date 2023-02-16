@@ -7,13 +7,13 @@
 <ins>Pre-processing:</ins> <br />
 A) Extract the DICOM images from the TAR archive and convert them to NIfTI (using SGE) - *untar_dcm2nii_final.csh* <br />
 B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_single-echo.rtf* OR *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
-_Functional_Connectivity_Estimation:_ <br />
+<ins>Functional_Connectivity_Estimation:</ins> <br />
 C) Calculate the FC and the (static) weighted degree centrality (wDC) - *voxel_wise_weighted_DC.ipynb* and *z-score.ipynb* <br />
-_Post-processing:_ <br />
+<ins>Post-processing:</ins> <br />
 D) Check if the study groups are balanced - *possible_covariate_check.ipynb* <br />
 E) Calculate the Holiga et al. EU-AIMS (https://www.science.org/doi/10.1126/scitranslmed.aat9223) mask-averaged wDC and intersect these masks with the intersection mask generated using all participant images - *generate_mean_DC.ipynb* and *generate_intersection_mask.ipynb* <br />
 F) Calculate the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) maps (after masking out the reference region in the PET image, if necessary) - using the instructions on https://github.com/ottaviadipasquale/react-fmri <br />
-_Analysis and plotting:_ <br />
+<ins>Analysis and plotting:</ins> <br />
 G) Between-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_two_sample.R* <br />
 H) Within-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_paired_sample.R* <br />
 I) Three-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_lme.R* <br />
