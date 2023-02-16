@@ -19,8 +19,8 @@ H) Within-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_pai
 I) Three-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_lme.R* <br />
 J) Voxel-wise group comparisons (both wDC and REACT) - *generate_whole_group_images.ipynb* + Randomise (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) <br />
         i.) Between-group comparison: *randomise -i between_group_wDC_img.nii -o group_comparison -d design.mat -t design.con -m intersection_mask.nii.gz -n 5000 -D -T* <br />
-	ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />
-	iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
+        ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />
+        iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
 K) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti_individual_trajectories_3_conditions.R* <br />
 L) Clustering of drug responders and non-responders - ***GitHub repo link to be added..*** <br />
 M) Additional correlations - *correlation.R* <br />
