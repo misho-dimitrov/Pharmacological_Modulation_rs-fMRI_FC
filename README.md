@@ -1,6 +1,6 @@
 # Pharmacological Modulation of Functional Brain Connectivity in Autism
 
-## Calculate resting-state functional brain connectivity (FC) from fMRI images and extract graph features. Assess the effect of various drugs on FC and graph properties. Pinpoint potential pharmacological mechanisms of these drugs using the REACT method described in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/. Investigate the ability of baseline FC to predict drug response. 
+## Calculate resting-state functional brain connectivity (FC) from fMRI images and extract graph features. <br /> Assess the effect of various drugs on FC and graph properties. <br /> Pinpoint potential pharmacological mechanisms of these drugs using the REACT method described in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/. <br /> Investigate the ability of baseline FC to predict drug response. 
 
 ### Main Scripts and Commands: 
 
