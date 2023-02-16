@@ -7,7 +7,7 @@
 <ins>Pre-processing:</ins> <br />
 A) Extract the DICOM images from the TAR archive and convert them to NIfTI (using SGE) - *untar_dcm2nii_final.csh* <br />
 B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_single-echo.rtf* OR *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
-<ins>Functional_Connectivity_Estimation:</ins> <br />
+<ins>Functional Connectivity Estimation:</ins> <br />
 C) Calculate the FC and the (static) weighted degree centrality (wDC) - *voxel_wise_weighted_DC.ipynb* and *z-score.ipynb* <br />
 <ins>Post-processing:</ins> <br />
 D) Check if the study groups are balanced - *possible_covariate_check.ipynb* <br />
@@ -18,7 +18,7 @@ G) Between-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_tw
 H) Within-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_paired_sample.R* <br />
 I) Three-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_lme.R* <br />
 J) Voxel-wise group comparisons (both wDC and REACT) - *generate_whole_group_images.ipynb* + Randomise (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) <br />
-	i.) Between-group comparison: *randomise -i between_group_wDC_img.nii -o group_comparison -d design.mat -t design.con -m intersection_mask.nii.gz -n 5000 -D -T* <br />
+>> i.) Between-group comparison: *randomise -i between_group_wDC_img.nii -o group_comparison -d design.mat -t design.con -m intersection_mask.nii.gz -n 5000 -D -T* <br />
 	ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />
 	iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
 K) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti_individual_trajectories_3_conditions.R* <br />
