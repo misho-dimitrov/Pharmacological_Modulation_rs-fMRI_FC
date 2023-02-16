@@ -25,11 +25,11 @@ J) Voxel-wise group comparisons (both wDC and REACT) - *generate_whole_group_ima
         ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />
         iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
 K) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti_individual_trajectories_3_conditions.R* <br />
-L) Clustering of drug responders and non-responders - ***GitHub repo link to be added..*** <br />
+L) Clustering of drug responders and non-responders - \[***GitHub repo link to be added..***\] <br />
 M) Additional correlations - *correlation.R* <br />
 
 *Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images.* 
 
-**N.B. conda environment file: Project_3_TIA.yml**
+*N.B. conda environment file: Project_3_TIA.yml*
 
-**Please check my PhD thesis (***Link to be added..***) for more details.* **
+<ins>Please check my PhD thesis (***Link to be added..***) for more details.</ins>
