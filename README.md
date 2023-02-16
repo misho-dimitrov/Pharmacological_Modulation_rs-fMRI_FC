@@ -28,6 +28,8 @@ K) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti
 L) Clustering of drug responders and non-responders - ***GitHub repo link to be added..*** <br />
 M) Additional correlations - *correlation.R* <br />
 
-*Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images. Please check my PhD thesis (***Link to be added..***) for more details.* 
+*Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images.* 
 
 **N.B. conda environment file: Project_3_TIA.yml**
+
+**Please check my PhD thesis (***Link to be added..***) for more details.* **
