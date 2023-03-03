@@ -12,7 +12,7 @@ B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nl
 C) Calculate the FC and the (static) weighted degree centrality (wDC) - *voxel_wise_weighted_DC.ipynb* and *z-score.ipynb* <br />
 
 <ins>Post-processing:</ins> <br />
-S) Calculate the Holiga et al. EU-AIMS (https://www.science.org/doi/10.1126/scitranslmed.aat9223) mask-averaged wDC and intersect these masks with the intersection mask generated using all participant images - *generate_mean_DC.ipynb* and *generate_intersection_mask.ipynb* <br />
+D) Calculate the Holiga et al. EU-AIMS (https://www.science.org/doi/10.1126/scitranslmed.aat9223) mask-averaged wDC and intersect these masks with the intersection mask generated using all participant images - *generate_mean_DC.ipynb* and *generate_intersection_mask.ipynb* <br />
 E) Generate whole-group images for the various comparisons - *generate_whole_group_images.ipynb* <br />
 F) Calculate the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) maps (after masking out the reference region in the PET image, if necessary) - using the instructions on https://github.com/ottaviadipasquale/react-fmri <br />
 
