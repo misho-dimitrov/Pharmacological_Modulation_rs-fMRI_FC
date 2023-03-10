@@ -17,7 +17,7 @@ E) Generate whole-group images for the various comparisons - *generate_whole_gro
 F) Calculate the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) maps (after masking out the reference region in the PET image, if necessary) - using the instructions on https://github.com/ottaviadipasquale/react-fmri <br />
 
 <ins>Analysis and plotting:</ins> <br />
-G) Check if the study groups are balanced - *possible_covariate_check.ipynb* <br />
+G) Check if the study groups are balanced - *demographics_check.ipynb* <br />
 H) Between-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_two_sample.R* <br />
 I) Within-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_paired_sample.R* <br />
 J) Three-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_lme.R* <br />
