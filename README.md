@@ -18,9 +18,12 @@ F) Calculate the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) m
 
 <ins>Analysis and plotting:</ins> <br />
 G) Check if the study groups are balanced - *demographics_check.ipynb* <br />
+
 H) Between-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_two_sample.R* <br />
 I) Within-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_paired_sample.R* <br />
 J) Three-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_lme.R* <br />
+... Automated group comparison (Holiga et al. masks) - *mean_dc_group_comparison_auto.R* <br />
+
 K) Voxel-wise group comparisons (both wDC and REACT) - Randomise (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) <br />
         i.) Between-group comparison: *randomise -i between_group_wDC_img.nii -o group_comparison -d design.mat -t design.con -m intersection_mask.nii.gz -n 5000 -D -T* <br />
         ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />

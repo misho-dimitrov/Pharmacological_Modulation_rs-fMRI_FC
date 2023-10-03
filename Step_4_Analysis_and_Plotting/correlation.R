@@ -4,51 +4,49 @@ library(ggpubr)
 
 ### http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r
 
-d <- read.csv("5-HT_levels_AQ.csv", header = TRUE#, colClasses=c(NA,"NULL","NULL", NA)
+d <- read.csv("TD_ASD_TIA_SHIFT_with_AQ_hyper.csv", header = TRUE#, colClasses=c("NULL",NA,NA)
               )
-colnames(d) <- c("Serotonin", "AQ")
 
-d_prelim <- ggplot(d, aes(x=Serotonin, y=AQ#, col=Group
-                          )) + geom_point()
-annotate_figure(d_prelim, top = text_grob("Scatterplot of Blood Serotonin Levels and AQ", 
-                                         #color = "red", face = "bold", size = 14
-))
+#d$Group[d$Group == "TD"] = "Non-autistic"
+#d$Group[d$Group == "ASC"] = "Autistic"
+
+## Check for linearity
+ggplot(d, aes(x=wDC, y=AQ)) + geom_point()
 
 ## Check for normality
 # http://www.sthda.com/english/wiki/normality-test-in-r
 
+# wDC
+ggdensity(data = d$wDC, 
+          title = "Density plot of baseline wDC",
+          xlab = "wDC")
+ggqqplot(d$wDC)
+shapiro.test(d$wDC)
+
 # AQ
 ggdensity(data = d$AQ, 
-          title = "Density plot of shift AQ",
+          title = "Density plot of AQ",
           xlab = "AQ")
 ggqqplot(d$AQ)
 shapiro.test(d$AQ)
 
-# 5-HT
-ggdensity(data = d$Serotonin, 
-          title = "Density plot of Serotonin",
-          xlab = "Serotonin")
-ggqqplot(d$Serotonin)
-shapiro.test(d$Serotonin)
+## Check for outliers
+# get from the other script
 
 ## Do the correlation analysis and plot the results
-sp <- ggscatter(d, x = "Serotonin", y = "AQ",
-                add = "reg.line",  # Add regression line
-                add.params = list(color = "blue", fill = "lightgray"), # Customize reg. line
-                conf.int = TRUE, # Add confidence interval
-                xlab = "Blood Serotonin (ng/mL)") + 
-  geom_vline(xintercept=270, linetype="dashed", color = "red")
-
-sp
-
-# Add correlation coefficient
-sp_corr <- sp +
-  stat_cor(#method = "pearson" 
-              method = "spearman"
-              #,label.x = 3, label.y = 30
-              )
-
-
-annotate_figure(sp_corr, top = text_grob("Correlation between Blood Serotonin Levels and AQ", 
-                                              #color = "red", face = "bold", size = 14
-))
+ggplot(d, aes(wDC,AQ)) + geom_point(aes(colour=Group)) + 
+  scale_color_manual(values = c(`Non-autistic` = "orange", Autistic = "green")) +
+  stat_smooth(method = "lm",
+              geom = "smooth") + 
+  # Add correlation coefficient
+  stat_cor(
+    #method = "pearson" 
+    method = "spearman"
+    #,label.x = 3, label.y = 30
+              ) + 
+  ggtitle(
+    "Fronto-parietal Mask"
+    #"Sensorimotor Mask"
+    ) +
+  theme(plot.title = element_text(hjust = 0.5))
+  
