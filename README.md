@@ -29,8 +29,6 @@ K) Voxel-wise group comparisons (both wDC and REACT) - Randomise (FSL - https://
         ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />
         iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
 L) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti_individual_trajectories_3_conditions.R* <br />
-M) Clustering of drug responders and non-responders - \[***GitHub repo link to be added..***\] <br />
-N) Additional correlations - *correlation.R* <br />
 
 *Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images.* 
 
