@@ -30,8 +30,8 @@ K) Voxel-wise group comparisons (both wDC and REACT) - Randomise (FSL - https://
         iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
 L) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti_individual_trajectories_3_conditions.R* <br />
 
-*Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images.* 
+<ins>*Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images.* </ins>
 
-*N.B. conda environment file: Project_3_TIA.yml*
+<ins>*N.B. conda environment file: Project_3_TIA.yml*</ins>
 
 <ins>Please check my PhD thesis (***Link to be added..***) for more details.</ins>
