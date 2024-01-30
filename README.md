@@ -1,6 +1,6 @@
 # Pharmacological Modulation of Functional Brain Connectivity in Autism
 
-## Calculate resting-state functional brain connectivity (FC) from fMRI images and extract graph features. <br /> Assess the effect of various drugs on FC and graph properties. <br /> Pinpoint potential pharmacological mechanisms of these drugs using the REACT method described in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/. <br /> Investigate the ability of baseline FC to predict drug response. 
+## Estimate resting-state functional brain connectivity (FC) from fMRI images and extract graph features. <br /> Assess the effect of various drugs on FC and graph properties. <br /> Pinpoint potential pharmacological mechanisms of these drugs using the REACT method described in https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/.  
 
 ### Main Scripts and Commands: 
 
@@ -9,7 +9,7 @@ A) Extract the DICOM images from the TAR archive and convert them to NIfTI (usin
 B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_single-echo.rtf* OR *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
 
 <ins>Functional Connectivity Estimation:</ins> <br />
-C) Calculate the FC and the (static) weighted degree centrality (wDC) - *voxel_wise_weighted_DC.ipynb* and *z-score.ipynb* <br />
+C) Calculate FC and (static) weighted degree centrality (wDC) - *voxel_wise_weighted_DC.ipynb* and *z-score.ipynb* <br />
 
 <ins>Post-processing:</ins> <br />
 D) Calculate the Holiga et al. EU-AIMS (https://www.science.org/doi/10.1126/scitranslmed.aat9223) mask-averaged wDC and intersect these masks with the intersection mask generated using all participant images - *generate_mean_DC.ipynb* and *generate_intersection_mask.ipynb* <br />
