@@ -15,7 +15,7 @@ C) Compute FC and (static) weighted degree centrality (wDC) - *voxel_wise_FC_cal
 D) Resample and binarise the Holiga et al. EU-AIMS masks (https://www.science.org/doi/10.1126/scitranslmed.aat9223), and intersect each with the intersection mask generated using the grey matter masks from all participants (all sessions) - *generate_intersection_mask.ipynb*; Estimate mask-averaged values for each mask for each participant session - *generate_mean_DC.ipynb* <br />
 E) Compute the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) maps (after masking out the reference region in the PET image, if necessary) - using the instructions on https://github.com/ottaviadipasquale/react-fmri <br />
 
-<ins>Analysis and plotting:</ins> <br />
+<ins>Statistical analysis and plotting:</ins> <br />
 F) Check if the study groups are balanced in terms of age, IQ and in-scanner movement as well as depression and anxiety scores - *balance_check.ipynb* and *HAM-DA_check.R*<br />
 
 G) Mask-averaged/mean wDC analyses - *mean_wDC_LMM.R* <br />
