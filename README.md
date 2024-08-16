@@ -6,7 +6,7 @@
 
 <ins>Pre-processing:</ins> <br />
 A) Extract the DICOM images from the TAR archive and convert them to NIfTI (using SGE) - *untar_dcm2nii_final.csh* <br />
-B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
+B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, should be modified as per the instructions in the rtf file and then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
 
 <ins>Functional Connectivity Estimation:</ins> <br />
 C) Compute FC and (static) weighted degree centrality (wDC) - *voxel_wise_FC_calc.ipynb* and *z-score.ipynb* <br />
