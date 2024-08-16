@@ -21,7 +21,7 @@ F) Check if the study groups are balanced in terms of age, IQ and in-scanner mov
 G) Mask-averaged/mean wDC analyses - *mean_wDC_LMM.R* <br />
 H) Individual mean wDC trajectories - *spaghetti_individual_trajectories.R* <br />
 
-I) Voxel-wise wDC analyses
+I) Voxel-wise wDC analyses <br />
         i.) Main effects of group and drug as well as their interaction - *voxel-wise_wDC_LMM_Main.R* <br />
         ii.) Within-group drug effects - *voxel-wise_wDC_LMM_Within.R* <br />
 J) Visualisation of voxel-wise wDC results - *plot_final_results.ipynb* <br />
