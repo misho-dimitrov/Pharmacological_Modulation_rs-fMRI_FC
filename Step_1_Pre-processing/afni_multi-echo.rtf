@@ -1,4 +1,4 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2706
+{\rtf1\ansi\ansicpg1252\cocoartf2761
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier-BoldOblique;\f1\fmodern\fcharset0 Courier;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
@@ -14,44 +14,33 @@ module load anaconda/3.7\
 module load tedana/0.0.8 \
 \
 
-\f0\i\b \ul \ulc2 Command to generate script:\
-\pard\pardeftab720\sl280\partightenfactor0
+\f0\i\b \ul Command to generate script:\
 
-\f1\i0\b0 \cf2 \ulnone afni_proc.py -blocks despike tshift align tlrc volreg mask combine blur scale regress -copy_anat t1.nii -anat_has_skull yes -dsets_me_echo fmri.e1.nii -dsets_me_echo fmri.e2.nii -dsets_me_echo fmri.e3.nii -echo_times 12.7 31.0 48.0 -reg_echo 2 -tcat_remove_first_trs 10 -align_opts_aea -cost nmi -check_flip -skullstrip_opts -push_to_edge -tlrc_base MNI152_T1_2009c+tlrc -tlrc_NL_warp -volreg_align_to MIN_OUTLIER -volreg_align_e2a -volreg_tlrc_warp -mask_epi_anat yes -mask_segment_anat yes -mask_segment_erode yes -combine_method tedana -combine_tedana_path /software/system/tedana/20200226/bin/tedana -blur_size 6 -blur_in_mask yes -regress_bandpass 0.01 0.1 -regress_ROI WMe CSF -regress_motion_per_run -regress_censor_motion 3.0 -regress_censor_outliers 0.05 -regress_apply_mot_types demean deriv -regress_est_blur_epits -html_review_style pythonic\
-\pard\pardeftab720\sl280\partightenfactor0
-
-\f0\i\b \cf2 \ul N.B:\ulnone  the TR, the slice acquisition order, and the number and the timings of the echoes vary across the datasets
-\f1\i0\b0 \
-\
+\f1\i0\b0 \ulnone afni_proc.py -blocks despike tshift align tlrc volreg mask combine blur scale regress -copy_anat t1.nii -anat_has_skull yes -dsets_me_echo fmri.e1.nii -dsets_me_echo fmri.e2.nii -dsets_me_echo fmri.e3.nii -echo_times 12.7 31.0 48.0 -reg_echo 2 -tcat_remove_first_trs 10 -align_opts_aea -cost nmi -check_flip -skullstrip_opts -push_to_edge -tlrc_base MNI152_T1_2009c+tlrc -tlrc_NL_warp -volreg_align_to MIN_OUTLIER -volreg_align_e2a -volreg_tlrc_warp -mask_epi_anat yes -mask_segment_anat yes -mask_segment_erode yes -combine_method tedana -combine_tedana_path /software/system/tedana/20200226/bin/tedana -blur_size 6 -blur_in_mask yes -regress_bandpass 0.01 0.1 -regress_ROI WMe CSF -regress_motion_per_run -regress_censor_motion 3.0 -regress_censor_outliers 0.05 -regress_apply_mot_types demean deriv -regress_est_blur_epits -html_review_style pythonic\
 \
 
 \f0\i\b \ul Remove -tzero 0 part and add these to the 3dTshift bit:\
-\pard\pardeftab720\sl280\partightenfactor0
 
-\f1\i0\b0 \cf2 \ulnone -TR 2.3s -tpattern altminus \
+\f1\i0\b0 \ulnone -TR 2.3s -tpattern altminus \
 \
 \
-\pard\pardeftab720\sl280\partightenfactor0
 
-\f0\i\b \cf2 \ul Make changes to the tedana/combine bit:
+\f0\i\b \ul Make changes to the tedana/combine bit:
 \f1\i0\b0 \ulnone \
 
 \f0\i\b \ul REMOVE:\
-\pard\pardeftab720\sl280\partightenfactor0
 
-\f1\i0\b0 \cf2 \ulnone tedana_wrapper.py -input pb02.$subj.r$run.e*.tshift+orig.BRIK \\\
+\f1\i0\b0 \ulnone tedana_wrapper.py -input pb02.$subj.r$run.e*.tshift+orig.BRIK \\\
       -TE $echo_times                                            \\\
       -mask mask_epi_anat.$subj+orig                             \\\
       -results_dir tedana_r$run                                  \\\
       -ted_label r$run                                           \\\
       -tedana_prog /software/system/tedana/20200226/bin/tedana   \\\
       -prefix tedprep\
-\pard\pardeftab720\sl280\partightenfactor0
 
-\f0\i\b \cf2 \ul AND ADD INSTEAD:\
-\pard\pardeftab720\sl280\partightenfactor0
+\f0\i\b \ul AND ADD INSTEAD:\
 
-\f1\i0\b0 \cf2 \ulnone tedana -d pb03.SUBJ.r01.e01.volreg+tlrc.BRIK \\\
+\f1\i0\b0 \ulnone tedana -d pb03.SUBJ.r01.e01.volreg+tlrc.BRIK \\\
           pb03.SUBJ.r01.e02.volreg+tlrc.BRIK \\\
           pb03.SUBJ.r01.e03.volreg+tlrc.BRIK \\\
           -e 12.7 31.0 48.0 --mask mask_epi_anat.SUBJ+tlrc.BRIK --debug
@@ -59,9 +48,8 @@ module load tedana/0.0.8 \
 
 \f1\i0\b0 \ulnone \
 \
-\pard\pardeftab720\sl280\partightenfactor0
 
-\f0\i\b \cf2 \ul ALSO CHANGE:
+\f0\i\b \ul ALSO CHANGE:
 \f1\i0\b0 \ulnone \
 Change 3dcopy tedana_r$run/TED.r$run/dn_ts_OC.nii pb03.$subj.r$run.combine\
 

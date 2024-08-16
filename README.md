@@ -6,29 +6,28 @@
 
 <ins>Pre-processing:</ins> <br />
 A) Extract the DICOM images from the TAR archive and convert them to NIfTI (using SGE) - *untar_dcm2nii_final.csh* <br />
-B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_single-echo.rtf* OR *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
+B) Generate the script for the AFNI-based pre-processing (https://pubmed.ncbi.nlm.nih.gov/8812068/) - *afni_multi-echo.rtf* (the output file, i.e. proc.SUBJ, is then run using *tcsh -xef proc.SUBJ | \& tee output.proc.SUBJ*) <br />
 
 <ins>Functional Connectivity Estimation:</ins> <br />
-C) Calculate FC and (static) weighted degree centrality (wDC) - *voxel_wise_weighted_DC.ipynb* and *z-score.ipynb* <br />
+C) Compute FC and (static) weighted degree centrality (wDC) - *voxel_wise_FC_calc.ipynb* and *z-score.ipynb* <br />
 
 <ins>Post-processing:</ins> <br />
-D) Calculate the Holiga et al. EU-AIMS (https://www.science.org/doi/10.1126/scitranslmed.aat9223) mask-averaged wDC and intersect these masks with the intersection mask generated using all participant images - *generate_mean_DC.ipynb* and *generate_intersection_mask.ipynb* <br />
-E) Generate whole-group images for the various comparisons - *generate_whole_group_images.ipynb* <br />
-F) Calculate the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) maps (after masking out the reference region in the PET image, if necessary) - using the instructions on https://github.com/ottaviadipasquale/react-fmri <br />
+D) Resample and binarise the Holiga et al. EU-AIMS masks (https://www.science.org/doi/10.1126/scitranslmed.aat9223), and intersect each with the intersection mask generated using the grey matter masks from all participants (all sessions) - *generate_intersection_mask.ipynb*; Estimate mask-averaged values for each mask for each participant session - *generate_mean_DC.ipynb* <br />
+E) Compute the REACT (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6547164/) maps (after masking out the reference region in the PET image, if necessary) - using the instructions on https://github.com/ottaviadipasquale/react-fmri <br />
 
 <ins>Analysis and plotting:</ins> <br />
-G) Check if the study groups are balanced - *demographics_check.ipynb* <br />
+F) Check if the study groups are balanced in terms of age, IQ and in-scanner movement as well as depression and anxiety scores - *balance_check.ipynb* and *HAM-DA_check.R*<br />
 
-H) Between-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_two_sample.R* <br />
-I) Within-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_paired_sample.R* <br />
-J) Three-group comparison (Holiga et al. masks) - *mean_dc_group_comparison_lme.R* <br />
-... Automated group comparison (Holiga et al. masks) - *mean_dc_group_comparison_auto.R* <br />
+G) Mask-averaged/mean wDC analyses - *mean_wDC_LMM.R* <br />
+H) Individual mean wDC trajectories - *spaghetti_individual_trajectories.R* <br />
 
-K) Voxel-wise group comparisons (both wDC and REACT) - Randomise (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) <br />
-        i.) Between-group comparison: *randomise -i between_group_wDC_img.nii -o group_comparison -d design.mat -t design.con -m intersection_mask.nii.gz -n 5000 -D -T* <br />
-        ii.) Within-group comparison: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* <br />
-        iii.) Plotting: *plot_final_results_lateral_and_medial.ipynb* <br />
-L) Individual trajectories - *spaghetti_individual_trajectories.R* OR *spaghetti_individual_trajectories_3_conditions.R* <br />
+I) Voxel-wise wDC analyses
+        i.) Main effects of group and drug as well as their interaction - *voxel-wise_wDC_LMM_Main.R* <br />
+        ii.) Within-group drug effects - *voxel-wise_wDC_LMM_Within.R* <br />
+J) Visualisation of voxel-wise wDC results - *plot_final_results.ipynb* <br />
+
+K) Voxel-wise REACT analysis - Randomise (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) <br />
+        i.) Within-group comparisons: *randomise -i study_group_wDC_img.nii.gz -o drug_effect_study_group -m intersection_mask.nii.gz -1 -v 5 -T* (results visualised in FSLeyes, FSL) <br />
 
 <ins>*Several fslmaths (FSL - https://pubmed.ncbi.nlm.nih.gov/15501092/) commands have been used to additionally manipulate images, e.g. to threshold, binarise or resample images.* </ins>
 
