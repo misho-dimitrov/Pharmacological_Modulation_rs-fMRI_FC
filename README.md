@@ -33,4 +33,4 @@ K) Voxel-wise REACT analysis - Randomise (FSL - https://pubmed.ncbi.nlm.nih.gov/
 
 <ins>*N.B. conda environment file: Project_3_TIA.yml*</ins>
 
-<ins>Please check my PhD thesis (***Link to be added..***) for more details.</ins>
+<ins>Please check my PhD thesis (https://kclpure.kcl.ac.uk/portal/en/studentTheses/pharmacological-modulation-of-functional-brain-connectivity-in-au) for more details.</ins>
